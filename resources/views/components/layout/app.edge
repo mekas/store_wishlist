@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>{{ title || "Your default title" }}</title>
   @if ($slots.meta)
     {{{ await $slots.meta() }}}
   @endif
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdonisShop - Online Store Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Optional: Add smooth transition for hover effects */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
 <body>
-  {{{ await $slots.main() }}}
+  <header>
+    {{-- Your site header --}}
+    @if ($slots.header)
+    {{{
+      await $slots.header()
+    }}}
+    @endif
+  </header>
+
+  <main>
+    {{--@!section('content') --}}
+    {{{ await $slots.main() }}}
+  </main>
+
+  <footer>
+    {{-- Your site footer --}}
+    @if ($slots.footer)
+    {{{
+      await $slots.footer()
+    }}}
+    @endif
+  </footer>
 </body>
 </html>
