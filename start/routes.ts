@@ -16,3 +16,9 @@ router.get('/home', async ({ view }) => {
     // You can pass data to your view here
   })
 })
+
+router.get('/cart', async ({ view }) => {
+  return view.render('pages/cart_confirmation', {
+    // You can pass data to your view here
+  })
+})
