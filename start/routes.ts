@@ -22,3 +22,27 @@ router.get('/cart', async ({ view }) => {
     // You can pass data to your view here
   })
 })
+
+router.get('/userlogin', async ({ view }) => {
+  return view.render('pages/login', {
+    // You can pass data to your view here
+  })
+})
+
+router.post('login_response', async({request, view}) => {
+  const formData = request.body()
+  console.log(request.all());
+  console.log(formData);
+  console.log(formData.fname);
+  const fname = formData.fname;
+  const lname = formData.lname;
+  return view.render('pages/dashboard',{
+    fname,lname
+  })
+} )
+
+router.post('/submit', async ({ request }) => {
+  const formData = request.body()
+  console.log('Inside route handler')
+  //return view.render('formResponse', { formData })
+})

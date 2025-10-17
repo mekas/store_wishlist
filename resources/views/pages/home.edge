@@ -1,8 +1,6 @@
 @layout.app() 
 @set('title', 'Adonis Shop')
 
-<body class="bg-gray-50 font-sans">
-    
     @slot('main')
     <main class="container mx-auto px-4 py-12">
         <h1 class="text-4xl font-extrabold text-gray-900 mb-8">Featured Products</h1>
@@ -14,16 +12,13 @@
                     <img class="w-full h-full object-cover" src="{{asset('resources/images/smartwatch.jpg')}}" alt="Stylish Smartwatch">
                     <span class="absolute top-2 right-2 bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">SALE</span>
                 </div>
-                
                 <div class="p-5">
                     <span class="text-sm text-gray-500">Electronics</span>
                     <h3 class="text-xl font-semibold text-gray-800 mt-1 mb-2">Stylish Smartwatch Pro</h3>
-                    
                     <div class="flex items-center mb-4">
                         <span class="text-2xl font-bold text-indigo-600">$199.99</span>
                         <span class="text-sm text-gray-400 line-through ml-2">$249.99</span>
                     </div>
-                    
                     <button id="addBtn1" class="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         Add to Cart
                     </button>
